@@ -129,8 +129,6 @@ CLOUDINARY_STORAGE = {
 # Default file storage for media files
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-MEDIA_URL = '/media/'
-
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
 
