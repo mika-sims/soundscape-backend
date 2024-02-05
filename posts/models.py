@@ -6,8 +6,19 @@ class Post(models.Model):
     """
     Post model for storing blog posts
     """
+
+    AUDIO_FILE_TYPES = [
+        ('recording', 'Recording'),
+        ('composition', 'Composition'),
+    ]
+
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     audio = models.FileField(blank=True)
+    audio_type = models.CharField(
+        max_length=32,
+        choices=AUDIO_FILE_TYPES,
+        default=''
+    )
     title = models.CharField(max_length=100)
     content = models.TextField()
     image = models.ImageField(
