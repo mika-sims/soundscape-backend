@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+
+    # Third-party apps
     'cloudinary',
     'rest_framework',
+    'django_filters',
 
     # Created project apps
     'profiles',
