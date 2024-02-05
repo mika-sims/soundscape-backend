@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     # Created project apps
     'profiles',
+    'posts',
 ]
 
 MIDDLEWARE = [
