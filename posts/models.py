@@ -6,7 +6,7 @@ class Post(models.Model):
     """
     Post model for storing blog posts
     """
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     audio = models.FileField(blank=True)
     title = models.CharField(max_length=100)
     content = models.TextField()
@@ -14,7 +14,7 @@ class Post(models.Model):
         upload_to='post_images/',
         null=True,
         blank=True,
-        default=''
+        default='../dml85uj9yqmxekst8gbc'
     )
     latitude = models.FloatField()
     longitude = models.FloatField()
