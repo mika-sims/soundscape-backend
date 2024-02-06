@@ -26,8 +26,19 @@ class FollowerSerializer(serializers.ModelSerializer):
         ]
 
     def create(self, validated_data):
-        # Handle the case where a user tries to follow
+        # Handle the cases where a user tries to follow
         # another user more than once.
+
+        owner = validated_data['owner']
+        followed = validated_data['followed']
+
+        # Display user friendly error messages
+        # if the user tries to follow themselves
+        if owner == followed:
+            raise serializers.ValidationError({
+                'detail': "You can't follow yourself."
+            })
+
         try:
             return super().create(validated_data)
         except IntegrityError:
