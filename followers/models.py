@@ -24,7 +24,16 @@ class Follower(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-        unique_together = ['owner', 'followed']
+        constraints = [
+            # Constraints to prevent self folowing
+            models.UniqueConstraint(
+                fields=['owner', 'followed'], name='unique_followers'
+            ),
+            models.CheckConstraint(
+                check=~models.Q(owner=models.F('followed')),
+                name='owner_not_followed'
+            )
+        ]
 
     def __str__(self):
         return f'{self.owner} {self.followed}'
