@@ -27,6 +27,9 @@ class CommentList(generics.ListCreateAPIView):
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     View for retrieving, updating or deleting a comment
+
+    owner = username of the post owner
+    is_owner = true if the user is the owner of the post
     """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = CommentDetailSerializer
