@@ -38,3 +38,11 @@ class CommentSerializer(serializers.ModelSerializer):
             'updated_at',
             'content'
         ]
+
+
+class CommentDetailSerializer(CommentSerializer):
+    """
+    Comment detail serializer
+    """
+
+    post = serializers.ReadOnlyField(source='post.id')
