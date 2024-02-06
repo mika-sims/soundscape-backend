@@ -28,4 +28,5 @@ urlpatterns = [
     path('soundscape/api/', include('profiles.urls')),
     path('soundscape/api/', include('posts.urls')),
     path('soundscape/api/', include('comments.urls')),
+    path('soundscape/api/', include('likes.urls')),
 ]
