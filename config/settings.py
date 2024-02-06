@@ -78,6 +78,7 @@ INSTALLED_APPS = [
     # Created project apps
     'profiles',
     'posts',
+    'comments',
 ]
 
 SITE_ID = 1
