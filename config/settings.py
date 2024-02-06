@@ -53,7 +53,11 @@ REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'config.serializers.CurrentUserSerializer'
 }
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'soundscape-app-3ca90467c35e.herokuapp.com'
+]
 
 
 # Application definition
