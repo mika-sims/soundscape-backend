@@ -11,45 +11,44 @@ class PostSerializer(serializers.ModelSerializer):
     """
     Serializer for post model
     """
-    owner = serializers.ReadOnlyField(source="owner.username")
+    owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     audio = AudioUploadField()
-    profile_id = serializers.ReadOnlyField(source="owner.profile.id")
-    profile_image = serializers.ReadOnlyField(source="owner.profile.image.url")
-    created_at = serializers.SerializerMethodField()
-    updated_at = serializers.SerializerMethodField()
-    
+    profile_id = serializers.ReadOnlyField(source='owner.profile.id')
+    profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
+    comments_count = serializers.ReadOnlyField()
+
     def get_is_owner(self, obj):
-        return obj.owner == self.context["request"].user
+        return obj.owner == self.context['request'].user
 
     def get_created_at(self, obj):
         if obj.created_at > timezone.now() - timedelta(days=1):
             return naturaltime(obj.created_at)
         else:
-            return obj.created_at.strftime("%d %b %Y, %I:%M %p")
+            return obj.created_at.strftime('%d %b %Y, %I:%M %p')
 
     def get_updated_at(self, obj):
         if obj.updated_at > timezone.now() - timedelta(days=1):
             return naturaltime(obj.updated_at)
         else:
-            return obj.updated_at.strftime("%d %b %Y, %I:%M %p")
-        
-    
+            return obj.updated_at.strftime('%d %b %Y, %I:%M %p')
+
     class Meta:
         model = Post
         fields = [
-            "id",
-            "owner",
-            "is_owner",
-            "profile_id",
-            "profile_image",
-            "audio",
-            "audio_type",
-            "title",
-            "content",
-            "image",
-            "latitude",
-            "longitude",
-            "created_at",
-            "updated_at",
+            'id',
+            'owner',
+            'is_owner',
+            'profile_id',
+            'profile_image',
+            'audio',
+            'audio_type',
+            'title',
+            'content',
+            'image',
+            'latitude',
+            'longitude',
+            'created_at',
+            'updated_at',
+            'comments_count',
         ]
