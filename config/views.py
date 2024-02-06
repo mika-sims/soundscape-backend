@@ -10,9 +10,22 @@ from .settings import (
 
 
 @api_view()
-def root_route(request):
+def soundscape_rest_api(request):
     return Response({
-        "message": "Welcome to the Soundscape REST API!"
+        'message': 'Welcome to the Soundscape REST API!',
+        'API endpoints': {
+            'profiles': 'soundscape/api/profiles',
+            'profile_detail': 'soundscape/api/profiles/:id',
+            'posts': 'soundscape/api/posts',
+            'post_detail': 'soundscape/api/posts/:id',
+            'followers': 'soundscape/api/followers',
+            'follower_detail': 'soundscape/api/followers/:id',
+            'comments': 'soundscape/api/comments',
+            'comment_detail': 'soundscape/api/comments/:id',
+            'likes': 'soundscape/api/likes',
+            'like_detail': 'soundscape/api/likes/:id',
+        },
+        'GitHub Repo': 'https://github.com/mika-sims/soundscape-backend',
     })
 
 

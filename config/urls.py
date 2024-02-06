@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import root_route, logout_route
+from .views import soundscape_rest_api, logout_route
 
 urlpatterns = [
-    path('', root_route),
+    path('', soundscape_rest_api),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('dj-rest-auth/logout/', logout_route),
