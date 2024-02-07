@@ -43,7 +43,7 @@ API Link: [Soundscape API](https://soundscape-app-3ca90467c35e.herokuapp.com/)
 
 The following models were created to represent the database model structure of the application:
 
-![Entity Relationship Diagram](../soundscape-backend/docs/soundscape_data_models.png)
+![Entity Relationship Diagram](https://raw.githubusercontent.com/mika-sims/soundscape-backend/main/docs/soundscape_data_models.png)
 
 ### User Model
 
@@ -144,7 +144,7 @@ Tests have been written for most of the code written for the project. Tests have
 
 <details>
 <summary>Show coverage report</summary>
-<img src="../soundscape-backend/docs/coverage_report.png">
+<img src="https://raw.githubusercontent.com/mika-sims/soundscape-backend/main/docs/coverage_report.png">
 </details>
 
 ### User Stories Testing
@@ -172,12 +172,12 @@ The following steps were taken to deploy the project:
 1. Clone or fork the project repo.
     <details>
     <summary>Image</summary>
-    <img src="../soundscape-backend/docs/deployment_images/clone_or_fork.png">
+    <img src="https://raw.githubusercontent.com/mika-sims/soundscape-backend/main/docs/deployment_images/clone_or_fork.png">
     </details>
 2. Create a [cloudinary](https://cloudinary.com) account and get your cloudinary url from your account dashboard.
     <details>
     <summary>Image</summary>
-    <img src="../soundscape-backend/docs/deployment_images/cloudinary_url.png">
+    <img src="https://raw.githubusercontent.com/mika-sims/soundscape-backend/main/docs/deployment_images/cloudinary_url.png">
     </details>
 3. Create a database. Since the database URL was sent via e-mail by Code Institute, no image is provided for it. You can find free database storage providers and get your database URL from the providers. For details see the documentation [PostgreSQL connection settings](https://docs.djangoproject.com/en/5.0/ref/databases/#postgresql-notes)
 4. Create a [Heroku](https://www.heroku.com) account and start your app. Go to the app settings and click the `Reveal Config Vars`. Add the following configuration variables.
@@ -192,12 +192,12 @@ The following steps were taken to deploy the project:
 5. After adding the configuration variables go to the `Deploy` tab and connect the GitHub repository with the Heroku.
     <details>
     <summary>Image</summary>
-    <img src="../soundscape-backend/docs/deployment_images/heroku_github_repo.png">
+    <img src="https://raw.githubusercontent.com/mika-sims/soundscape-backend/main/docs/deployment_images/deploy_branch.png">
     </details>
 6. Now scroll to the `Manual deploy` section and click the `Deploy Branch` button.
     <details>
     <summary>Image</summary>
-    <img src="../soundscape-backend/docs/deployment_images/deploy_branch.png">
+    <img src="https://raw.githubusercontent.com/mika-sims/soundscape-backend/main/docs/deployment_images/heroku_github_repo.png">
     </details>
 7. After the deployment is completed, you can open the deployed app by clicking `View`.
 
