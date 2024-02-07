@@ -6,7 +6,7 @@ class Follower(models.Model):
     """
     Follower model for storing user following relationships.
 
-    The 'unique_together' is used to enforce a unique constraint 
+    The 'unique_together' is used to enforce a unique constraint
     on a combination of fields. This means that user can't follow
     another user more than once.
 
